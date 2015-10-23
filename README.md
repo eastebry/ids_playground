@@ -35,12 +35,17 @@ To send data to Elasticsearch, you will need to start the logstash process for w
 
 To send the suricata data to ES:
 ```
+# SSH into the VM
+vagrant ssh
+# cd to the logstash directory
 cd /vagrant/logstash
 # Make the docker containers
 make
 # start the suricata docker container
 ./run suricata
 ```
+This will send all the data from your suricata log file to ElasticSearch.
+
 Now (thanks to the port forwarding configuration in the VagrantFile), you can view the kibana at:
 localhost:8080
 
